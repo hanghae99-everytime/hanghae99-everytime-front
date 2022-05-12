@@ -11,13 +11,14 @@ const Detail: React.FC<DetailProps> = () => {
   const [input, setInput] = useState("")
   return (
     <>
-      <Ba/>
+      <Ba>
       <Input
         type="text"
         placeholder="댓글 작성"
         _onChange={() => { }}
         width="400px"
         />
+        </Ba>
     </>
   )
 };
