@@ -12,7 +12,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
   return (
     <React.Fragment>
       <Back>
-        <div>{children}</div>
+        <div className="back">{children}</div>
       </Back>
     </React.Fragment>
   )
@@ -33,9 +33,8 @@ const Back = styled.div`
   justify-content: center;
   align-items: center;
 
-  div{
-    background-color: white;
-    opacity: 0.15;
+  .back{
+    background-color: #ffffff3f;
     border-radius: 5px;
     height: 90%;
     width: 90%;
