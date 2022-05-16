@@ -2,11 +2,11 @@ import React from "react";
 import styled from 'styled-components';
 import Ba from '../assets/hero1.png'
 
-interface BackgroundProps {
+interface BackProps {
   children : any
 }
 
-const Background: React.FC<BackgroundProps> = (props) => {
+const Background: React.FC<BackProps> = (props) => {
   const {children} = props;
 
   return (
@@ -24,11 +24,14 @@ Background.defaultProps = {
 
 
 const Back = styled.div`
-  background-color: #ffffff3f;
-  border-radius: 20px;
-  height: 90%;
-  width: 90%;
+  background: url(${Ba}) no-repeat;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  margin: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export default Background;

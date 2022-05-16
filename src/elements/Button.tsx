@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 
 interface ButtonProps {
-  text: boolean
+  text: string
   children: any
   _onClick: () => void
   margin: string
@@ -25,12 +25,12 @@ const Button = ({ text, _onClick, children, margin, width, padding, height, acti
       onClick={_onClick}
       {...active}
     >
-      {children}
+      {text? text : children}
     </Btn>
   </React.Fragment>;
 };
 Button.defaultProps = {
-  text: false,
+  text: '',
   children: null,
   _onClick: () => { },
   margin: '',
@@ -60,6 +60,7 @@ const Btn = styled.button`
   position: absolute;
   ${(props: any) => (props.top ? `top:${props.top};` : '')};
   ${(props: any) => (props.left ? `left:${props.left};` : '')};
+  font-weight: 700;
 `
 
 export default Button;
