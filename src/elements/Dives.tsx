@@ -15,16 +15,16 @@ const Background: React.FC<DivProps> = (props) => {
       <Dives>
         <div className="title">항해99에 타</div>
         <Button
-            width="145px"
-            height="26px"
+            width="83%"
+            height="3.5%"
             br="40px"
             top='91px'
             left="21px"
             color="black"
           >로그인</Button>
           <Button
-            width="145px"
-            height="26px"
+            width="83%"
+            height="3.5%"
             br="40px"
             top='124px'
             left="21px"
@@ -54,7 +54,7 @@ const Dives = styled.div`
   position: relative;
   display: flex;
   .title{
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #FB0000;
     position: absolute;
@@ -67,23 +67,23 @@ const Dives = styled.div`
     width: 83px;
     left: 53px;
     .line{
-    width: 25px;
+    width: 30%;
     height: 3px;
     background-color: white;
     border-radius: 50px;
     }
     .number{
       font-weight: 500;
-      font-size: 20px;
+      font-size: 1.3rem;
       text-align: center
     }
     .string{
       font-weight: 500;
-      font-size: 11px;
+      font-size: 0.8rem;
       text-align: center
     }
    .line2{
-    width: 25px;
+    width: 30%;
     height: 3px;
     background-color: white;
     border-radius: 50px;

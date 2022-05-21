@@ -36,12 +36,18 @@ Input.defaultProps = {
 };
 
 const InputBox = styled.input`
-  background-color: #fff;
-  opacity: 5;
+  background-color:  rgba(255, 255, 255, 0.5);;
   border: none;
-  ${(props) => (props.width ? `width:${props.width};` : '')};
-  padding: 10px;
+  ${(props:any) => (props.width ? `width:${props.width};` : '')};
+  ${(props: any) => (props.height ? `height:${props.height};` : '')};
+  padding: 11px;
   border-radius: 5px;
+  ::placeholder {
+  color: black;
+  }
+  :focus{
+    outline: none;
+  }
 `
 
 export default Input;
