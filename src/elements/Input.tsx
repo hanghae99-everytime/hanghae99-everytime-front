@@ -27,7 +27,7 @@ const Input = ({ placeholder, _onChange, type, margin, width, padding, height }:
 
 Input.defaultProps = {
   placeholder: '',
-  type: 'text',
+  type: '',
   _onChange: () => { },
   width: '',
   margin: '',
@@ -48,6 +48,7 @@ const InputBox = styled.input`
   :focus{
     outline: none;
   }
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
 export default Input;
