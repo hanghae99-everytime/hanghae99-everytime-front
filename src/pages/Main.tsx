@@ -1,6 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+//elements
+import Back from "../elements/Back";
 import Background from "../elements/Background";
-import styled from 'styled-components';
+import Dives from "../elements/Dives";
 
 interface MainProps {}
 
@@ -8,16 +12,16 @@ const Main: React.FC<MainProps> = (props) => {
   return (
     <React.Fragment>
       <Container>
-        <Background>
-          <h1>메인</h1>
-        </Background>
+        <Back>
+          <Background>
+            <Dives></Dives>
+          </Background>
+        </Back>
       </Container>
     </React.Fragment>
-  ) 
+  );
 };
 
-const Container = styled.div`
-
-`
+const Container = styled.div``;
 
 export default Main;
