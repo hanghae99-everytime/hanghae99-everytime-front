@@ -3,23 +3,25 @@ import styled from 'styled-components';
 
 interface InputProps {
   placeholder: string
-  _onChange: () => void
+  onChange: (e:any) => void
   type: string
   width: string
   margin: string
   padding: string
   height:string
+  value:string
 }
 
-const Input = ({ placeholder, _onChange, type, margin, width, padding, height }: InputProps) => {
+const Input = ({ placeholder, onChange, type, margin, width, padding, height,value }: InputProps) => {
   const styled = { width, margin, padding, height }
   return (
     <React.Fragment>
       <InputBox
         {...styled}
         placeholder={placeholder}
-        onChange={_onChange}
+        onChange={onChange}
         type={type}
+        value={value}
       />
     </React.Fragment>
   )
@@ -28,11 +30,12 @@ const Input = ({ placeholder, _onChange, type, margin, width, padding, height }:
 Input.defaultProps = {
   placeholder: '',
   type: '',
-  _onChange: () => { },
+  onChange: () => {},
   width: '',
   margin: '',
   padding: '',
   height:'',
+  value:''
 };
 
 const InputBox = styled.input`

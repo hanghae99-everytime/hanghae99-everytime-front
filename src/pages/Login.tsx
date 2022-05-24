@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { useDispatch } from "react-redux";
 
 //elements
 import Input from "../elements/Input";
@@ -9,35 +10,64 @@ import Button from "../elements/Button";
 import Dives from "../elements/Dives";
 import Comments from "../components/Comments";
 
+//redux
+import {actionCreators as userActions} from "../redux/modules/user";
+
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
-  return (
+  const [email, setEmail] = useState('')
+  const [pw, setPw] = useState("")
+
+  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+  const onChangePw = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPw(e.target.value);
+  };
+  const dispatch = useDispatch();
+
+  const Login =(email:any, pw:any)=>{
+  }
+  return(
     <Wrap>
-      <Back>
-        <Ba>
-          <Dives></Dives>
-          <div className="main">
-            <div className="wrap">
-              <div className="title">로그인</div>
-              <div className="input">
-                <div className="label">이메일</div>
-                <Input width="100%" height="30px" type="text" />
-              </div>
-              <div className="input">
-                <div className="label">비밀번호</div>
-                <Input width="100%" height="30px" type="text" />
-              </div>
-              <div>
-                <button className="btn">로그인</button>
-              </div>
-              <SignupWrap>
-                <div>
-                  아직회원이 아니신가요?
-                  <a>회원가입</a>
-                </div>
-              </SignupWrap>
+    <Back>
+      <Ba>
+        <Dives>
+        </Dives>
+        <div className="main">
+          <div className="wrap">
+            <div className="title">로그인</div>
+            <div className="input">
+              <div className="label">이메일</div>
+              <Input
+              width="100%"
+              height="30px"
+              type="text"
+              onChange={(e)=>(onChangeEmail(e))}
+              value={email}
+              />
             </div>
+            <div className="input">
+              <div className="label">비밀번호</div>
+              <Input
+              width="100%"
+              height="30px"
+              type="text"
+              onChange={(e)=>(onChangePw(e))}
+              value={pw}/>
+            </div>
+            <div>
+              <button className="btn" onClick={()=>{Login(email,pw)}}>로그인</button>
+            </div>
+            <SignupWrap>
+            <div>
+              아직회원이 아니신가요?
+              <a>
+                회원가입
+              </a>
+            </div>
+          </SignupWrap>
           </div>
         </Ba>
       </Back>
