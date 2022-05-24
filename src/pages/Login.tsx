@@ -1,62 +1,52 @@
 import React, { useState } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 //elements
-import Input from '../elements/Input';
-import Ba from '../elements/Background';
-import Back from '../elements/Back';
+import Input from "../elements/Input";
+import Ba from "../elements/Background";
+import Back from "../elements/Back";
 import Button from "../elements/Button";
-import Dives from '../elements/Dives';
+import Dives from "../elements/Dives";
 import Comments from "../components/Comments";
 
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
-  return(
+  return (
     <Wrap>
-    <Back>
-      <Ba>
-        <Dives>
-        </Dives>
-        <div className="main">
-          <div className="wrap">
-            <div className="title">로그인</div>
-            <div className="input">
-              <div className="label">이메일</div>
-              <Input
-              width="100%"
-              height="30px"
-              type="text"
-              />
+      <Back>
+        <Ba>
+          <Dives></Dives>
+          <div className="main">
+            <div className="wrap">
+              <div className="title">로그인</div>
+              <div className="input">
+                <div className="label">이메일</div>
+                <Input width="100%" height="30px" type="text" />
+              </div>
+              <div className="input">
+                <div className="label">비밀번호</div>
+                <Input width="100%" height="30px" type="text" />
+              </div>
+              <div>
+                <button className="btn">로그인</button>
+              </div>
+              <SignupWrap>
+                <div>
+                  아직회원이 아니신가요?
+                  <a>회원가입</a>
+                </div>
+              </SignupWrap>
             </div>
-            <div className="input">
-              <div className="label">비밀번호</div>
-              <Input
-              width="100%"
-              height="30px"
-              type="text"/>
-            </div>
-            <div>
-              <button className="btn">로그인</button>
-            </div>
-            <SignupWrap>
-            <div>
-              아직회원이 아니신가요?
-              <a>
-                회원가입
-              </a>
-            </div>
-          </SignupWrap>
           </div>
-        </div>
-      </Ba>
-    </Back>
-  </Wrap>
-  )
+        </Ba>
+      </Back>
+    </Wrap>
+  );
 };
 
 const Wrap = styled.div`
-  .main{
+  .main {
     width: 80%;
     height: 90%;
     margin: auto;
@@ -64,10 +54,10 @@ const Wrap = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 24px;
-    .wrap{
+    .wrap {
       margin: auto;
       width: 80%;
-      .title{
+      .title {
         margin: auto;
         font-weight: 700;
         font-size: 1.5rem;
@@ -75,21 +65,21 @@ const Wrap = styled.div`
         margin-bottom: 30px;
       }
     }
-    .input{
+    .input {
       margin-bottom: 20px;
-      .label{
-      font-weight: 600;
-      margin-bottom: 10px;
+      .label {
+        font-weight: 600;
+        margin-bottom: 10px;
       }
-      .explain{
+      .explain {
         font-size: 0.9rem;
         margin-top: 5px;
         margin-left: 10px;
       }
     }
-    .btn{
+    .btn {
       margin: 40px auto 20px auto;
-      background-color: #DF0000;
+      background-color: #df0000;
       border: 0;
       border-radius: 5px;
       color: white;
@@ -99,10 +89,10 @@ const Wrap = styled.div`
       box-shadow: 0 1px 1px 1px rgba(113, 113, 113, 0.3);
       cursor: pointer;
       font-weight: 700;
-      display: block
+      display: block;
     }
   }
-`
+`;
 //또는 부분 고민중 어케 만들지ㅠ
 const LineWrap = styled.div`
   display: flex;
@@ -111,12 +101,12 @@ const LineWrap = styled.div`
   position: relative;
   font-size: 14px;
   div {
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 0px 5px;
     color: #c7c8db;
     z-index: 3;
   }
-  .line{
+  .line {
     width: 250px;
     border: 0.7px solid #c7c8db;
     padding: 0px;
