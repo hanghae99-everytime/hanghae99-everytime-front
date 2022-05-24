@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
+import { useDispatch } from "react-redux";
 
 //elements
 import Input from '../elements/Input';
@@ -9,9 +10,25 @@ import Button from "../elements/Button";
 import Dives from '../elements/Dives';
 import Comments from "../components/Comments";
 
+//redux
+import {actionCreators as userActions} from "../redux/modules/user";
+
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
+  const [email, setEmail] = useState('')
+  const [pw, setPw] = useState("")
+
+  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+  const onChangePw = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPw(e.target.value);
+  };
+  const dispatch = useDispatch();
+
+  const Login =(email:any, pw:any)=>{
+  }
   return(
     <Wrap>
     <Back>
@@ -27,6 +44,8 @@ const Login: React.FC<LoginProps> = () => {
               width="100%"
               height="30px"
               type="text"
+              onChange={(e)=>(onChangeEmail(e))}
+              value={email}
               />
             </div>
             <div className="input">
@@ -34,10 +53,12 @@ const Login: React.FC<LoginProps> = () => {
               <Input
               width="100%"
               height="30px"
-              type="text"/>
+              type="text"
+              onChange={(e)=>(onChangePw(e))}
+              value={pw}/>
             </div>
             <div>
-              <button className="btn">로그인</button>
+              <button className="btn" onClick={()=>{Login(email,pw)}}>로그인</button>
             </div>
             <SignupWrap>
             <div>

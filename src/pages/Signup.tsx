@@ -9,14 +9,27 @@ import Button from "../elements/Button";
 import Dives from '../elements/Dives';
 import Comments from "../components/Comments";
 
-interface SignupProps {}
+interface SignupProps {
+  // text:string
+}
 
 const Signup: React.FC<SignupProps> = () => {
-  const [email, setEmail] = useState("")
-  const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
+  const [email, setEmail] = useState('')
+  const [pw, setPw] = useState("")
+  const [checkPw, setCheckPw] = useState("")
+
+  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
-  console.log('이메일',email);
+  const onChangePw = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPw(e.target.value);
+  };
+  const onChangeCheckPw = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckPw(e.target.value);
+  };
+
+  console.log(email,pw,checkPw);
+
   return(
     <Wrap>
       <Back>
@@ -32,21 +45,27 @@ const Signup: React.FC<SignupProps> = () => {
                 width="100%"
                 height="30px"
                 type="text"
-                _onChange={()=>(onChangeEmail)}/>
+                onChange={(e)=>onChangeEmail(e)}
+                value={email}
+                />
               </div>
               <div className="input">
                 <div className="label">비밀번호</div>
                 <Input
                 width="100%"
                 height="30px"
-                type="text"/>
+                type="text"
+                onChange={(e)=>onChangePw(e)}
+                value={pw}/>
               </div>
               <div className="input">
                 <div className="label">비밀번호 확인</div>
                 <Input
                 width="100%"
                 height="30px"
-                type="text"/>
+                type="text"
+                onChange={(e)=>onChangeCheckPw(e)}
+                value={checkPw}/>
               </div>
               <div className="input">
                 <div className="label">승인 사진</div>
