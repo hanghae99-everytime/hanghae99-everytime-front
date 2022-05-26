@@ -14,21 +14,23 @@ interface MypageProps {}
 const Mypage: React.FC<MypageProps> = () => {
   return(
     <Wrap>
-    <Back>
-      <Ba>
-        <Dives>
-        </Dives>
-        <div className="main">
-          마이페이지
-        </div>
-      </Ba>
-    </Back>
+      <Back>
+        <Ba>
+          <Dives>
+          </Dives>
+          <div className="main">
+            <div className="wrap">
+              <div className="title">마이페이지</div>
+            </div>
+          </div>
+        </Ba>
+      </Back>
     </Wrap>
   )
 };
 
 const Wrap = styled.div`
-    .main{
+  .main{
     width: 80%;
     height: 90%;
     margin: auto;
@@ -36,7 +38,18 @@ const Wrap = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 24px;
+    .wrap{
+      margin: auto;
+      width: 80%;
+      .title{
+        margin: auto;
+        font-weight: 700;
+        font-size: 1.5rem;
+        width: 14%;
+        margin-bottom: 30px;
+      }
     }
+  }
 `
 
 export default Mypage;

@@ -6,7 +6,7 @@ const LOGIN = 'user/LOGIN' as const;
 const LOGOUT = 'user/LOGOUT' as const;
 
 //action creators
-const logIn = createAction(LOGIN);
+const logIn = createAction(LOGIN,(email:string, pw:string) => email);
 const logOut = createAction(LOGOUT);
 
 //actions type
@@ -17,7 +17,10 @@ type CounterState = {
 
 //initialState
 const initialState: CounterState = {
-  user: { email: "" },
+  user: {
+    email: "",
+    pw: ""
+  },
   is_login: false
 };
 
