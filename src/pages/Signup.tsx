@@ -75,15 +75,8 @@ const Signup: React.FC<SignupProps> = () => {
                 type="file"/>
                 <div className="explain">항해 99 슬랙 캡쳐 사진</div>
               </div>
-              <div className="btn">
-                <Button
-                bg="red"
-                br="5px"
-                color="white"
-                width="20%"
-                height="40px"
-                padding="10px"
-                >회원가입</Button>
+              <div>
+               <button className="btn">회원가입</button>
               </div>
             </div>
           </div>
@@ -126,7 +119,18 @@ const Wrap = styled.div`
       }
     }
     .btn{
-      margin-top: 25px;
+      margin: 40px auto 20px auto;
+      background-color: #DF0000;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+      width: 40%;
+      height: 40px;
+      padding: 10px;
+      box-shadow: 0 1px 1px 1px rgba(113, 113, 113, 0.3);
+      cursor: pointer;
+      font-weight: 700;
+      display: block
     }
   }
 `

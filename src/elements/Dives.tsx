@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { history } from "../redux/configureStore";
 
 import Button from "../elements/Button";
 
@@ -9,7 +10,7 @@ const Dives: React.FC<DivProps> = (props) => {
   return (
     <React.Fragment>
       <Dive>
-        <div className="title">항해99에 타</div>
+        <div className="title" onClick={()=>{history.push('/'); window.location.reload();}}>항해99에 타</div>
         <Button
           width="83%"
           height="3.5%"
@@ -17,6 +18,7 @@ const Dives: React.FC<DivProps> = (props) => {
           top="91px"
           left="21px"
           color="black"
+          _onClick={()=>{history.replace("/login"); window.location.reload();}}
         >
           로그인
         </Button>
@@ -27,6 +29,7 @@ const Dives: React.FC<DivProps> = (props) => {
           top="124px"
           left="21px"
           color="black"
+          _onClick={()=>{history.replace("/writer/1"); window.location.reload();}}
         >
           글작성하기
         </Button>
@@ -59,6 +62,7 @@ const Dive = styled.div`
     position: absolute;
     top: 43px;
     left: 32px;
+    cursor: pointer;
   }
   .article {
     position: absolute;
