@@ -1,29 +1,26 @@
 import React from "react";
-import styled from 'styled-components';
-import Ba from '../assets/hero1.png'
+import styled from "styled-components";
+import Ba from "../assets/hero1.png";
 
 interface BackProps {
-  children : any
+  children: any;
 }
 
-const Background: React.FC<BackProps> = (props) => {
-  const {children} = props;
+const Back: React.FC<BackProps> = (props) => {
+  const { children } = props;
 
   return (
     <React.Fragment>
-      <Back>
-        {children}
-      </Back>
+      <BackBox>{children}</BackBox>
     </React.Fragment>
-  )
+  );
 };
 
-Background.defaultProps = {
-  children : null
-}
+Back.defaultProps = {
+  children: null,
+};
 
-
-const Back = styled.div`
+const BackBox = styled.div`
   background: url(${Ba}) no-repeat;
   height: 100vh;
   width: 100%;
@@ -32,6 +29,6 @@ const Back = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
-export default Background;
+export default Back;
