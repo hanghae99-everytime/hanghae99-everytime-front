@@ -19,6 +19,7 @@ const initialState = {
 //middleware actions
 const logInDB = (email, pw) =>{
   return function (dispatch, getState, { history }){
+    console.log('리덕스',email,pw)
     axios
     .post("/user/login", { email: email, pwd: pw })
     .then((res)=>{

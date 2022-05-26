@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components';
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 //elements
 import Input from "../elements/Input";
@@ -16,8 +17,9 @@ import {actionCreators as userActions} from "../redux/modules/user";
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
-  const [email, setEmail] = useState('')
-  const [pw, setPw] = useState("")
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState<string>('')
+  const [pw, setPw] = useState<string>("")
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -25,10 +27,23 @@ const Login: React.FC<LoginProps> = () => {
   const onChangePw = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPw(e.target.value);
   };
-  const dispatch = useDispatch();
+  console.log(email,pw);
 
   const Login =(email:any, pw:any)=>{
+    axios
+   .post('/user/login',{
+      email:email,
+      pw:pw
+    })
+    .then((response:any)=>{
+      window.alert(response.data.msg)
+      dispatch(userActions.logIn(email))
+    })
+    .catch((err:any)=>{
+      window.alert(err.data.msg)
+    })
   }
+
   return(
     <Wrap>
     <Back>
@@ -63,7 +78,7 @@ const Login: React.FC<LoginProps> = () => {
             <SignupWrap>
             <div>
               아직회원이 아니신가요?
-              <a>
+              <a href="/signup">
                 회원가입
               </a>
             </div>
